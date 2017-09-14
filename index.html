@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body,html,section {
+            width: 100%;
+            height: 100%;
+        }
+        section {
+            overflow: hidden;
+        }
+        .sky {
+            width: 100%;
+            height: 100%;
+            background-color: #ddf5f7;
+            position: relative;
+            animation: sky 100s linear infinite ;
+        }
+        .massif {
+            width: 100%;
+            height: 301px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: url('images/groundFront.png');
+            background-position:center;
+            z-index: 999;
+        }
+        .massif-black {
+            width: 100%;
+            height: 299px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: url('images/groundMid.png');
+            z-index: 990;
+        }
+        .lawn {
+            width: 100%;
+            height: 281px;
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            background: url('images/groundBack.png');
+            z-index: 9;
+        }
+        .O-round {
+            width: 231px;
+            height: 370px;
+            position: absolute;
+            bottom: 144px;
+            left: 310px;
+            background: url('images/friendshipShell.png');
+            z-index: 998;
+        }
+        .stadium {
+            width: 520px;
+            height: 229px;
+            position: absolute;
+            bottom: 155px;
+            left: 90px;
+            background: url('images/dowEventCenter.png');
+            z-index: 99;
+        }
+        .house-red {
+            width: 137px;
+            height: 263px;
+            position: absolute;
+            bottom: 275px;
+            left: 666px;
+            background: url('images/Glockenspiel.png');
+            z-index: 99;
+        }
+        .house-white {
+            width: 88px;
+            height: 201px;
+            position: absolute;
+            bottom: 275px;
+            left: 807px;
+            background: url('images/beans.png');
+            z-index: 8;
+        }
+        .bucket {
+            width: 347px;
+            height: 285px;
+            position: absolute;
+            bottom: 183px;
+            right: 220px;
+            background: url('images/Planetarium.png');
+            z-index: 980;
+        }
+        .balloon {
+            width: 157px;
+            height: 227px;
+            position: absolute;
+            top: 100px;
+            right: -157px;
+            background: url('images/balloon.png');
+            z-index: 7;
+            animation: balloon 30s ease infinite alternate;
+        }
+        .right-BigWhiteCloud {
+            width: 302px;
+            height: 169px;
+            z-index: 6;
+            position: absolute;
+            top: 20px;
+            right: -302px;
+            background: url('images/cloudLarge.png');
+            animation: right-BigWhiteCloud 60s linear infinite alternate;
+        }
+        .left-BigWhiteCloud {
+            width: 159px;
+            height: 92px;
+            z-index: 5;
+            position: absolute;
+            top: 130px;
+            left: -92px;
+            background: url('images/cloudMedium.png');
+            animation: left-BigWhiteCloud 60s linear infinite alternate;
+        }
+        .left-SmallWhiteCloud {
+            width: 89px;
+            height: 50px;
+            z-index: 5;
+            position: absolute;
+            top: 30px;
+            left: -50px;
+            background: url('images/cloudSmall.png');
+            animation: left-SmallWhiteCloud 120s linear infinite alternate;
+        }
+        section > .sky > .sun-moon {
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            top: 74px;
+            left: 500px;
+            transform: rotate(-55deg);
+            animation: sun-moon 100s linear infinite;
+        }
+        .sun {
+            width: 100px;
+            height: 100px;
+            background-color: orangered;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        .moon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #d41bb9;
+        }
+        /*气球动画*/
+        @keyframes balloon {
+            0%{
+                right: -157px;
+            }
+            25%{
+                right: 25%;
+            }
+            50%{
+                right: 50%;
+            }
+            75%{
+                right:75%
+            }
+            100%{
+                right: 100%;
+            }
+        }
+        /*左边大白云动画*/
+        @keyframes left-BigWhiteCloud {
+            0%{
+                left: -92px;
+            }
+            25%{
+                left: 25%;
+            }
+            50%{
+                left: 50%;
+            }
+            75%{
+                right:75%
+            }
+            100%{
+                left: 100%;
+            }
+        }
+        /*右边大白云动画*/
+        @keyframes right-BigWhiteCloud {
+            0%{
+                right: -302px;
+            }
+            25%{
+                right: 25%;
+            }
+            50%{
+                right: 50%;
+            }
+            75%{
+                right:75%
+            }
+            100%{
+                right: 100%;
+            }
+        }
+        /*左边小白云动画*/
+        @keyframes left-SmallWhiteCloud {
+            0%{
+                left: -50px;
+            }
+            25%{
+                left: 25%;
+            }
+            50%{
+                left: 50%;
+            }
+            75%{
+                left:75%
+            }
+            100%{
+                left: 100%;
+            }
+        }
+        /*太阳及月亮动画*/
+        @keyframes sun-moon {
+            0% {
+                transform: rotate(-55deg);
+            }
+            100% {
+                transform: rotate(-415deg);
+            }
+        }
+        /*天空白天与黑夜的动画*/
+        @keyframes sky {
+            0% { background: #f9c7b8;}
+            25% { background: #ddf5f7;}
+            50% {background: #9fb5b7;}
+            75% { background: #350847; }
+            100% { background: #f9c7b8; }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <!--天空-->
+        <div class="sky">
+            <!--最前边的小山丘-->
+            <div class="massif"></div>
+            <!--后边的小山丘-->
+            <div class="massif-black"></div>
+            <!--最后边的大草坪-->
+            <div class="lawn"></div>
+            <!--O型白色圆圈-->
+            <div class="O-round"></div>
+            <!--体育场-->
+            <div class="stadium"></div>
+            <!--红色房顶的房子-->
+            <div class="house-red"></div>
+            <!--白色房子-->
+            <div class="house-white"></div>
+            <!--橘色的水桶-->
+            <div class="bucket"></div>
+            <!--气球-->
+            <div class="balloon"></div>
+            <!--右边的大白云-->
+            <div class="right-BigWhiteCloud"></div>
+            <!--左边的大白云-->
+            <div class="left-BigWhiteCloud"></div>
+            <!--左边的小白云-->
+            <div class="left-SmallWhiteCloud"></div>
+            <!--太阳与月亮-->
+            <div class="sun-moon">
+                <div class="moon"></div>
+                <div class="sun"></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
